@@ -18,7 +18,7 @@ def get_words(text):
 #count sentences 
 def count_sentences(text):
     sentences=text.replace('!','.').replace('?','.').split('.')
-    sentences=[s for s in sentences if s.strip!='']
+    sentences=[s for s in sentences if s.strip()!='']
     return len(sentences)
 
 #ford frequency
@@ -29,12 +29,13 @@ def word_frequency(words):
             freq[word]+=1
         else:
             freq[word]=1
-        return freq
+    
+    return freq
     
 # top 10 words
 def top_10_words(freq):
     sorted_words=sorted(freq.items(),key=lambda x:x[1],reverse =True)
-    return sorted_words
+    return sorted_words[:10]
 
 def analyze_text(filename):
     text = read_file(filename)
